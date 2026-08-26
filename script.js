@@ -7,6 +7,11 @@ const heroWorldDots = Array.from(document.querySelectorAll(".hero-world__dots ci
 const heroWorldRoute = document.querySelector(".hero-world__route");
 const themeToggle = document.querySelector(".theme-toggle");
 const themeColor = document.querySelector('meta[name="theme-color"]');
+const colorSchemePreference = window.matchMedia("(prefers-color-scheme: dark)");
+
+function hasSavedTheme() {
+  try { return localStorage.getItem("teara-theme") !== null; } catch { return false; }
+}
 
 function applyTheme(theme, persist = true) {
   document.documentElement.dataset.theme = theme;
@@ -22,6 +27,10 @@ applyTheme(document.documentElement.dataset.theme || "light", false);
 
 themeToggle?.addEventListener("click", () => {
   applyTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
+});
+
+colorSchemePreference.addEventListener("change", (event) => {
+  if (!hasSavedTheme()) applyTheme(event.matches ? "dark" : "light", false);
 });
 
 if (heroWorldDots.length > 1 && heroWorldRoute && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {

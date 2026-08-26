@@ -761,6 +761,15 @@ html[data-theme="dark"] {
 [data-theme="dark"] .faq details > p { color: #a3a4ad; }
 [data-theme="dark"] .feature-story__media { background: #202128; }
 [data-theme="dark"] .feature-story__media::after { background: linear-gradient(105deg, #202128 20%, #30313a 42%, #202128 64%); }
+[data-theme="dark"] .feature-story__media.is-ready::before {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  border: 20px solid #24252c;
+  border-radius: inherit;
+  content: "";
+  pointer-events: none;
+}
 [data-theme="dark"] .block-type-pill { color: #bfc0c8; background: #282930; }
 
 [data-theme="dark"] .roadmap__list,
