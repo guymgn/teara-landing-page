@@ -1251,6 +1251,10 @@ html[data-theme="dark"] {
   animation: feature-video-shimmer 1.25s ease-in-out infinite;
 }
 
+.feature-story__media.is-ready {
+  background: transparent;
+}
+
 @keyframes feature-video-shimmer {
   from { background-position: 110% 0; }
   to { background-position: -110% 0; }
@@ -1267,6 +1271,7 @@ html[data-theme="dark"] {
   height: calc(100% - 32px);
   margin: 16px;
   border-radius: 18px;
+  clip-path: inset(1px round 18px);
   opacity: 1;
   object-fit: cover;
   transition: opacity 360ms ease;
