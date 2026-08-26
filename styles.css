@@ -761,9 +761,6 @@ html[data-theme="dark"] {
 [data-theme="dark"] .faq details > p { color: #a3a4ad; }
 [data-theme="dark"] .feature-story__media { background: #202128; }
 [data-theme="dark"] .feature-story__media::after { background: linear-gradient(105deg, #202128 20%, #30313a 42%, #202128 64%); }
-[data-theme="dark"] .feature-story__media.is-ready video {
-  transform: scale(1.015);
-}
 [data-theme="dark"] .block-type-pill { color: #bfc0c8; background: #282930; }
 
 [data-theme="dark"] .roadmap__list,
@@ -1266,8 +1263,10 @@ html[data-theme="dark"] {
 
 .feature-story__media video {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: calc(100% - 32px);
+  height: calc(100% - 32px);
+  margin: 16px;
+  border-radius: 18px;
   opacity: 1;
   object-fit: cover;
   transition: opacity 360ms ease;
