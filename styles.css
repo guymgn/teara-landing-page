@@ -240,7 +240,7 @@ button {
 }
 
 .hero-world__continents {
-  background: url("assets/world-map-robinson.svg?v=dotted-1") center / contain no-repeat;
+  background: url("assets/world-map-robinson.svg?v=dotted-2") center / contain no-repeat;
   opacity: 0.42;
 }
 
