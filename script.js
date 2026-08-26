@@ -321,8 +321,8 @@ function setPlaying(isPlaying) {
   audioButton.setAttribute(
     "aria-label",
     isPlaying
-      ? "Pause the pronunciation of Te Ara"
-      : "Play the pronunciation of Te Ara",
+      ? "Pause the pronunciation of Teara"
+      : "Play the pronunciation of Teara",
   );
 }
 

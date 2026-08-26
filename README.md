@@ -1,6 +1,6 @@
-# Te Ara landing page
+# Teara landing page
 
-A lightweight static implementation of the initial Te Ara landing-page hero.
+A lightweight static implementation of the initial Teara landing-page hero.
 
 ## Preview locally
 
