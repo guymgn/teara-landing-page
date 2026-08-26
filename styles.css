@@ -1049,7 +1049,7 @@ html[data-theme="dark"] {
   color: #292929;
   font-size: var(--type-section-title);
   font-weight: 600;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.035em;
   line-height: 1;
   text-align: left;
 }
@@ -1302,7 +1302,7 @@ html[data-theme="dark"] {
   color: #292929;
   font-size: var(--type-section-title);
   font-weight: 600;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.035em;
   line-height: 1;
 }
 
@@ -1375,7 +1375,7 @@ html[data-theme="dark"] {
   color: #292929;
   font-size: var(--type-section-title);
   font-weight: 600;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.035em;
   line-height: 0.98;
 }
 
