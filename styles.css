@@ -240,8 +240,8 @@ button {
 }
 
 .hero-world__continents {
-  background: url("assets/world-map-robinson.svg?v=no-antarctica-1") center / contain no-repeat;
-  opacity: 0.07;
+  background: url("assets/world-map-robinson.svg?v=dotted-1") center / contain no-repeat;
+  opacity: 0.42;
 }
 
 .hero-world__routes {
@@ -727,7 +727,7 @@ html[data-theme="dark"] {
 [data-theme="dark"] .floating-nav .floating-nav__testflight { color: #17181d; background: #f4f4f6; }
 [data-theme="dark"] .floating-nav .floating-nav__testflight:hover { color: #0d0e12; background: #fff; }
 
-[data-theme="dark"] .hero-world__continents { opacity: 0.13; filter: brightness(1.35); }
+[data-theme="dark"] .hero-world__continents { opacity: 0.48; filter: brightness(1.35); }
 [data-theme="dark"] .hero-world__dots { fill: #101116; }
 [data-theme="dark"] .hero-app-icon { filter: drop-shadow(0 8px 14px rgb(0 0 0 / 22%)) drop-shadow(0 22px 40px rgb(96 91 255 / 22%)); }
 [data-theme="dark"] .meaning { color: #aaaab3; }
