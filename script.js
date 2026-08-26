@@ -5,6 +5,24 @@ const floatingNav = document.querySelector(".floating-nav");
 const heroShowcase = document.querySelector(".hero-showcase");
 const heroWorldDots = Array.from(document.querySelectorAll(".hero-world__dots circle"));
 const heroWorldRoute = document.querySelector(".hero-world__route");
+const themeToggle = document.querySelector(".theme-toggle");
+const themeColor = document.querySelector('meta[name="theme-color"]');
+
+function applyTheme(theme, persist = true) {
+  document.documentElement.dataset.theme = theme;
+  themeToggle?.setAttribute("aria-label", `Switch to ${theme === "dark" ? "light" : "dark"} mode`);
+  themeToggle?.setAttribute("aria-pressed", String(theme === "dark"));
+  themeColor?.setAttribute("content", theme === "dark" ? "#101116" : "#ffffff");
+  if (persist) {
+    try { localStorage.setItem("teara-theme", theme); } catch {}
+  }
+}
+
+applyTheme(document.documentElement.dataset.theme || "light", false);
+
+themeToggle?.addEventListener("click", () => {
+  applyTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
+});
 
 if (heroWorldDots.length > 1 && heroWorldRoute && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   let lastDestination = heroWorldDots[0];
