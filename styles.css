@@ -771,6 +771,8 @@ html[data-theme="dark"] {
 [data-theme="dark"] .roadmap__item--complete { color: #d9d9de; }
 [data-theme="dark"] .roadmap__check { border-color: #484952; background: #17181e; }
 [data-theme="dark"] .roadmap__item--complete .roadmap__check { border-color: #7776ff; background: #7776ff; }
+[data-theme="dark"] .roadmap__item--beta { border-color: #34353d; background: #17181e; }
+[data-theme="dark"] .roadmap__status-text { color: #b9bac3; }
 [data-theme="dark"] .roadmap__note { color: #858690; }
 [data-theme="dark"] .faq details > p a { color: #a5a4ff; }
 
@@ -1363,6 +1365,32 @@ html[data-theme="dark"] {
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 2;
+}
+
+.roadmap__item--beta {
+  min-height: 48px;
+  margin: 12px 0;
+  padding: 11px 14px;
+  border: 1px solid #e2e3e7;
+  border-radius: 12px;
+  background: #f7f7f9;
+}
+
+.roadmap__status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #32d583;
+  box-shadow: 0 0 0 3px rgb(50 213 131 / 12%);
+}
+
+.roadmap__status-text {
+  color: #62636b;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.095em;
+  line-height: 1.4;
+  text-transform: uppercase;
 }
 
 .roadmap__note {

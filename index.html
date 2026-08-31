@@ -189,6 +189,10 @@
         </header>
 
         <ul class="roadmap__list">
+          <li class="roadmap__item roadmap__item--beta" aria-label="Current status: Public TestFlight beta, version 1.0, build 12">
+            <span class="roadmap__status-dot" aria-hidden="true"></span>
+            <span class="roadmap__status-text">Public TestFlight beta · V1.0 · Build 12</span>
+          </li>
           <li class="roadmap__item roadmap__item--complete" aria-label="Available now: Create and organize trips">
             <span class="roadmap__check" aria-hidden="true">
               <svg viewBox="0 0 16 16"><path d="m4 8.2 2.5 2.5L12 5.4" /></svg>
@@ -213,13 +217,17 @@
             </span>
             <span>Keep trip data in sync with iCloud</span>
           </li>
-          <li class="roadmap__item" aria-label="Planned: Integration with TripIt">
+          <li class="roadmap__item" aria-label="Planned: Trip Assembler">
             <span class="roadmap__check" aria-hidden="true"></span>
-            <span>Integration with TripIt</span>
+            <span>Trip Assembler</span>
           </li>
           <li class="roadmap__item" aria-label="Planned: Custom at Teara import email address">
             <span class="roadmap__check" aria-hidden="true"></span>
             <span>Custom @teara import email address</span>
+          </li>
+          <li class="roadmap__item" aria-label="Planned: Integration with TripIt">
+            <span class="roadmap__check" aria-hidden="true"></span>
+            <span>Integration with TripIt</span>
           </li>
           <li class="roadmap__item" aria-label="Planned: Travel Day mode">
             <span class="roadmap__check" aria-hidden="true"></span>
@@ -238,8 +246,6 @@
             <span>Costs at a glance</span>
           </li>
         </ul>
-
-        <p class="roadmap__note">The roadmap will evolve with feedback from early testers.</p>
       </section>
 
       <section id="faq" class="faq section-reveal" aria-labelledby="faq-title">
@@ -268,6 +274,14 @@
           <details>
             <summary>Is my trip information private?</summary>
             <p>Booking emails are processed on your device. Your trip data syncs through your private iCloud account, and Teara does not read your inbox.</p>
+          </details>
+          <details>
+            <summary>Does booking import work on every supported device?</summary>
+            <p>Teara processes booking details directly on your device. The range of confirmations it can understand may vary by device, and support will continue to expand throughout the beta.</p>
+          </details>
+          <details>
+            <summary>Is Teara still evolving?</summary>
+            <p>Yes. Teara is actively growing during beta, with support for more trip building blocks, smoother ways to bring plans into your timeline, and new tools that make organizing a trip increasingly effortless.</p>
           </details>
           <details>
             <summary>How much will Teara cost?</summary>
