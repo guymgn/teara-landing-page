@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="How Teara handles your data." />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Teara" />
+    <meta property="og:title" content="Privacy | Teara" />
+    <meta property="og:description" content="How Teara handles your data." />
+    <meta property="og:url" content="https://teara.io/privacy/" />
+    <title>Privacy | Teara</title>
+    <link rel="canonical" href="https://teara.io/privacy/" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;display=swap" rel="stylesheet" />
+    <script>
+      (() => {
+        let savedTheme = null;
+        try { savedTheme = localStorage.getItem("teara-theme"); } catch {}
+        const theme = savedTheme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css?v=privacy-1" />
+  </head>
+  <body class="legal-body">
+    <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch color theme">
+      <svg class="theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.1 15.4A8.5 8.5 0 0 1 8.6 3.9 8.5 8.5 0 1 0 20.1 15.4Z" /></svg>
+      <svg class="theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.75" /><path d="M12 2.25v2M12 19.75v2M4.25 12h-2M21.75 12h-2M5.1 5.1l1.4 1.4M17.5 17.5l1.4 1.4M18.9 5.1l-1.4 1.4M6.5 17.5l-1.4 1.4" /></svg>
+    </button>
+
+    <main class="legal-page">
+      <header class="legal-page__header">
+        <a class="legal-page__brand" href="../" aria-label="Return to Teara">
+          <img src="../assets/teara-app-icon.png" alt="" />
+          <span>Teara</span>
+        </a>
+        <p class="features__eyebrow">Privacy</p>
+        <h1>Clear about your data.</h1>
+        <p class="legal-page__intro">Teara keeps only the information needed to build your trip and provide the services you choose to use. This page explains what is handled, why it is needed, and where it goes.</p>
+        <p class="legal-page__date">Effective September 1, 2026</p>
+      </header>
+
+      <article class="legal-page__content">
+        <section>
+          <h2>The Teara app</h2>
+          <h3>Information you provide</h3>
+          <p>When you connect forwarded bookings, Teara uses Sign in with Apple to create your forwarding account. The relay receives only messages sent to your personal Teara forwarding address. It does not read or scan your inbox.</p>
+          <p>The relay may temporarily hold the forwarded message subject, body text, and supported PDF attachments so your device can retrieve them. Teara processes the booking details on your device and lets you review them before adding anything to a trip.</p>
+
+          <h3>Account and notification data</h3>
+          <p>Teara stores the identifier supplied by Sign in with Apple, the name you choose to share, your personal forwarding address, authentication tokens, and an Apple Push Notification service device token when notifications are enabled. Booking alerts contain no booking details.</p>
+
+          <h3>Your trips</h3>
+          <p>Your trips and trip building blocks are stored on your device and sync through the private iCloud account signed into that device. Teara does not use trip data for advertising and does not sell it.</p>
+
+          <h3>Retention</h3>
+          <p>Forwarded messages are marked as received after your device retrieves them. Retrieved messages are deleted from the relay after 7 days. Messages that have not been retrieved are deleted after 30 days. You can delete your forwarding account in the app. Your trips remain on your device and in your private iCloud account unless you delete them there.</p>
+        </section>
+
+        <section>
+          <h2>Service providers</h2>
+          <p>Teara relies on Apple for Sign in with Apple, iCloud, and push notifications, and on Cloudflare for the booking relay and limited operational storage.</p>
+          <p>Each provider handles information under its own terms and privacy policy. Teara shares only the information needed to provide the requested function.</p>
+        </section>
+
+        <section>
+          <h2>LinkedIn authorization</h2>
+          <p>Teara may use LinkedIn's authorized tools to manage its official company page. Access is granted through LinkedIn and limited to the permissions needed for approved page management. It can be revoked through LinkedIn at any time.</p>
+        </section>
+
+        <section>
+          <h2>Tracking and advertising</h2>
+          <p>Teara does not track people across apps or websites. Teara does not sell personal information or use it for targeted advertising.</p>
+        </section>
+
+        <section>
+          <h2>Security</h2>
+          <p>Teara uses encrypted connections for data in transit and provider security controls for stored data. Access credentials are kept outside public source code. No system can be guaranteed completely secure, but Teara limits collection and access to what each feature needs.</p>
+        </section>
+
+        <section>
+          <h2>Your choices</h2>
+          <ul>
+            <li>You choose which confirmations to forward to Teara.</li>
+            <li>You review imported booking details before adding them to a trip.</li>
+            <li>You can disable notifications in system settings.</li>
+            <li>You can disconnect and delete your Teara forwarding account in the app.</li>
+            <li>You can revoke a connected LinkedIn authorization through LinkedIn.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Changes and questions</h2>
+          <p>This notice may change as Teara grows. The effective date above will be updated when the policy changes materially.</p>
+          <p>For privacy questions, message the official <a href="https://www.linkedin.com/company/tearaio/" target="_blank" rel="noopener noreferrer">Teara company page on LinkedIn</a>.</p>
+        </section>
+      </article>
+    </main>
+
+    <footer class="legal-footer">
+      <a href="../">Return to Teara</a>
+      <span>© 2026 Teara</span>
+    </footer>
+
+    <script src="../script.js?v=theme-1"></script>
+  </body>
+</html>
