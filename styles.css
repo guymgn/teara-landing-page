@@ -950,8 +950,14 @@ html[data-theme="dark"] {
 [data-theme="dark"] .faq details { border-color: #2b2c33; }
 [data-theme="dark"] .roadmap__item { color: #777883; }
 [data-theme="dark"] .roadmap__item--complete { color: #d9d9de; }
+[data-theme="dark"] .roadmap__item--in-progress { color: #c5c5cc; }
 [data-theme="dark"] .roadmap__check { border-color: #484952; background: #17181e; }
 [data-theme="dark"] .roadmap__item--complete .roadmap__check { border-color: #7776ff; background: #7776ff; }
+[data-theme="dark"] .roadmap__item--in-progress .roadmap__check {
+  border-color: #454462;
+  border-top-color: #8b8aff;
+  background: transparent;
+}
 [data-theme="dark"] .roadmap__item--beta { border-color: #34353d; background: #17181e; }
 [data-theme="dark"] .roadmap__status-text { color: #b9bac3; }
 [data-theme="dark"] .roadmap__note { color: #858690; }
@@ -1536,6 +1542,23 @@ html[data-theme="dark"] {
 .roadmap__item--complete .roadmap__check {
   border-color: #6765e9;
   background: #6765e9;
+}
+
+.roadmap__item--in-progress {
+  color: #57585f;
+}
+
+.roadmap__item--in-progress .roadmap__check {
+  border-color: #d9d9ff;
+  border-top-color: #6765e9;
+  background: transparent;
+  animation: roadmap-spin 1.1s linear infinite;
+}
+
+@keyframes roadmap-spin {
+  to {
+    transform: rotate(1turn);
+  }
 }
 
 .roadmap__check svg {
@@ -2150,6 +2173,10 @@ html[data-theme="dark"] {
   .feature-story__media::after,
   .feature-story__media video {
     transition: none;
+  }
+
+  .roadmap__item--in-progress .roadmap__check {
+    animation: none;
   }
 
   .has-js .section-reveal {
