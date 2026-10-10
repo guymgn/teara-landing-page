@@ -4,8 +4,10 @@ Static marketing site for the Teara iOS app. Plain HTML, CSS and JS. No framewor
 
 ## Ground rules
 
-- Never deploy, promote a Netlify deploy, or push to `main` without Guy's explicit approval for that specific release. Netlify project `tearalp` is linked to this repo, and a push to `main` may publish to teara.io.
-- Work on a branch and open a PR. Guy reviews and decides when it goes live.
+- **Staging first, always.** Every change, however small, goes to the `staging` branch (directly or through a PR into `staging`). Share the staging preview link with Guy and stop there. Nothing reaches `main` or teara.io until Guy explicitly approves that specific deploy. A request like "fix X and publish" still means staging first, then wait for approval.
+- `main` is production. Netlify project `tearalp` builds and publishes teara.io from `main`, so a push or merge to `main` is a deploy. Never push or merge to `main`, run a production deploy, or promote a Netlify deploy without that approval.
+- Staging preview: https://staging--tearalp.netlify.app (Netlify branch deploy of `staging`).
+- Before promoting, confirm `staging` contains everything on `main` and nothing unapproved. Promote by fast-forwarding `main` to the approved `staging` commit.
 - Never commit credentials, `.env*` files, or `.netlify/`.
 - Copy: direct and specific, no hype, no em dashes or en dashes. Check claims against what the app actually does. Do not mention Gmail sync or TripIt as features.
 - Use the device light/dark theme. There is no manual theme toggle, and none should be added back.
