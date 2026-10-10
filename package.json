@@ -1,0 +1,8 @@
+{
+  "name": "teara-landing-page",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync:teara": "node scripts/sync-teara-status.mjs"
+  }
+}
