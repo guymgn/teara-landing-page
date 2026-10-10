@@ -30,7 +30,7 @@ Then open http://localhost:8080/. Check both mobile and desktop widths and both 
 
 ## Deliberate decisions to preserve
 
-- Apple Watch mockup sits over the lower right of the iPhone in the hero (`assets/hero-watch.png`, 116px wide). Keep the watch and phone screens consistent.
+- Apple Watch mockup (black, `assets/hero-watch.png`, 116px wide) sits over the lower right of the iPhone in the hero, with a "Coming soon to the Apple Watch" tooltip on hover, tap and keyboard focus. Keep the watch and phone screens consistent (same trip, days to go and route).
 - Official App Store SVG badge; original TestFlight badge and app icon.
 - Mobile menu hides only the TestFlight link and shortens the CTA to "Download".
 - Feature videos play in sequence when the first one enters the viewport, and replay on hover, focus or click.

@@ -2290,8 +2290,14 @@ span.roadmap-column__heading { cursor:default; }
 }
 .hero-devices__watch {
   position: absolute; left: 136px; top: 241px;
-  width: 116px; height: auto;
+  width: 116px;
+  border-radius: 24px;
 }
+.hero-devices__watch img { display: block; width: 116px; height: auto; }
+.hero-devices__watch:focus-visible { outline: 3px solid #7776ff; outline-offset: 4px; }
+.hero-devices__watch .hero-devices__tooltip { left: auto; right: 0; }
+.hero-devices__watch:hover .hero-devices__tooltip,
+.hero-devices__watch:focus .hero-devices__tooltip { visibility: visible; opacity: 1; }
 .hero-intro {
   align-items: flex-start; gap: 26px; padding-bottom: 8px;
   text-align: left;
@@ -2323,7 +2329,8 @@ span.roadmap-column__heading { cursor:default; }
   .hero-intro .definition { line-height: 1.5; }
 }
 
-.hero-downloads__tooltip {
+.hero-downloads__tooltip,
+.hero-devices__tooltip {
   position: absolute;
   z-index: 5;
   bottom: calc(100% + 10px);
