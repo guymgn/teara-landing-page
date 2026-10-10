@@ -2289,7 +2289,6 @@ span.roadmap-column__heading { cursor:default; }
   filter: drop-shadow(-8px 12px 15px rgb(0 0 0 / 10%));
 }
 .hero-devices__watch {
-  visibility: hidden;
   position: absolute; left: 136px; top: 241px;
   width: 116px; height: auto;
 }
