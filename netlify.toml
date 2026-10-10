@@ -1,0 +1,36 @@
+# Netlify publishes this repo from its root. Keep repo-only files off teara.io.
+[[redirects]]
+  from = "/README.md"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/CLAUDE.md"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/package.json"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/netlify.toml"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/.gitignore"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/scripts/*"
+  to = "/404"
+  status = 404
+  force = true

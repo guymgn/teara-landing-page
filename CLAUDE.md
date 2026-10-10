@@ -38,5 +38,5 @@ Then open http://localhost:8080/. Check both mobile and desktop widths and both 
 
 - `script.js` calls `audioButton.addEventListener` without a null check. Privacy and support have no audio button, so it throws there.
 - No `_redirects` / `netlify.toml` here. `/.well-known/apple-app-site-association` and `/join/*` invite links return 404 on teara.io. The old copy in the Teara app repo (`Teara/landing-page`) has proxy rules to `api.teara.io`; review them before porting. Do not copy anything else from that stale copy.
-- Netlify publishes from the repo root, so `README.md`, `package.json`, `scripts/` and this file would become public on the next Git-based deploy. Decide on a publish directory or excludes before the first deploy from Git.
+- Netlify publishes from the repo root. `netlify.toml` returns 404 for repo-only files (`README.md`, `CLAUDE.md`, `package.json`, `scripts/`). Add any new non-public file to that list. Cloud sessions cannot reach Netlify's API, so publishing happens by pushing to `main`, only with Guy's approval.
 - support@teara.io delivery is unverified.
