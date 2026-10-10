@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Teara is an iPhone app for keeping bookings, destinations, and daily plans in one clear itinerary. Join the beta on TestFlight."
+      content="Teara is an iPhone app for keeping bookings, destinations, and daily plans in one clear itinerary. Available now on the App Store."
     />
     <meta name="theme-color" content="#ffffff" />
     <meta name="application-name" content="Teara" />
@@ -16,7 +16,7 @@
     <meta property="og:title" content="Teara | Your whole trip, already in order" />
     <meta
       property="og:description"
-      content="Keep bookings, destinations, and daily plans in one clear itinerary. Join the Teara beta on TestFlight."
+      content="Keep bookings, destinations, and daily plans in one clear itinerary. Download Teara on the App Store."
     />
     <meta property="og:url" content="https://teara.io/" />
     <meta property="og:image" content="https://teara.io/assets/teara-app-icon.png" />
@@ -28,7 +28,7 @@
     <meta name="twitter:title" content="Teara | Your whole trip, already in order" />
     <meta
       name="twitter:description"
-      content="Keep bookings, destinations, and daily plans in one clear itinerary. Join the Teara beta on TestFlight."
+      content="Keep bookings, destinations, and daily plans in one clear itinerary. Download Teara on the App Store."
     />
     <meta name="twitter:image" content="https://teara.io/assets/teara-app-icon.png" />
     <meta name="twitter:image:alt" content="The Teara app icon" />
@@ -49,19 +49,13 @@
     />
     <script>
       (() => {
-        let savedTheme = null;
-        try { savedTheme = localStorage.getItem("teara-theme"); } catch {}
-        const theme = savedTheme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        const theme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <link rel="stylesheet" href="styles.css?v=theme-1" />
+    <link rel="stylesheet" href="styles.css?v=mobile-nav-wide-4" />
   </head>
   <body>
-    <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch color theme">
-      <svg class="theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.1 15.4A8.5 8.5 0 0 1 8.6 3.9 8.5 8.5 0 1 0 20.1 15.4Z" /></svg>
-      <svg class="theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.75" /><path d="M12 2.25v2M12 19.75v2M4.25 12h-2M21.75 12h-2M5.1 5.1l1.4 1.4M17.5 17.5l1.4 1.4M18.9 5.1l-1.4 1.4M6.5 17.5l-1.4 1.4" /></svg>
-    </button>
     <nav class="floating-nav" aria-label="Page navigation">
       <a class="floating-nav__brand" href="#hero" aria-label="Back to the Teara introduction">
         <img class="floating-nav__app-icon" src="assets/teara-app-icon.png" alt="" />
@@ -69,7 +63,8 @@
       <a href="#features">Features</a>
       <a href="#roadmap">Roadmap</a>
       <a href="#faq">FAQ</a>
-      <a class="floating-nav__testflight" href="https://testflight.apple.com/join/YMMtMJGQ" target="_blank" rel="noopener noreferrer">TestFlight</a>
+      <a class="floating-nav__testflight" href="https://testflight.apple.com/join/YMMtMJGQ" target="_blank" rel="noopener noreferrer">Join TestFlight</a>
+      <a class="floating-nav__download" href="https://apps.apple.com/app/id6800005317" target="_blank" rel="noopener noreferrer" aria-label="Download the app"><span class="floating-nav__download-full">Download the app</span><span class="floating-nav__download-short" aria-hidden="true">Download</span></a>
     </nav>
 
     <main class="page-shell">
@@ -91,22 +86,24 @@
               </g>
             </svg>
           </div>
+          <div class="hero-devices">
+            <img class="hero-devices__iphone" src="assets/hero-iphone.png" width="194" height="419" alt="Teara on iPhone showing upcoming trips" fetchpriority="high" />
+            <img class="hero-devices__watch" src="assets/hero-watch.png" width="116" height="171" alt="Teara on Apple Watch showing your next trip" />
+          </div>
           <div class="hero-intro">
-            <h1 id="hero-title" class="hero-app-icon-wrap">
-              <img class="hero-app-icon" src="assets/teara-app-icon.png" alt="Teara" />
-            </h1>
-
-            <a id="testflight" class="testflight-badge" href="https://testflight.apple.com/join/YMMtMJGQ" target="_blank" rel="noopener noreferrer" aria-label="Join the Teara beta on TestFlight">
-              <img
-                class="testflight-badge__icon"
-                src="assets/testflight-icon.png"
-                alt=""
-              />
-              <span class="testflight-badge__copy">
-                <span>Join the beta on</span>
-                <strong>TestFlight</strong>
-              </span>
-            </a>
+            <img class="hero-brand-icon" src="assets/teara-app-icon.png" width="80" height="81" alt="Teara" />
+            <h1 id="hero-title" class="hero-headline">Your whole trip,<br />already in order.</h1>
+            <div class="hero-downloads">
+              <a class="hero-downloads__store" href="https://apps.apple.com/app/id6800005317" target="_blank" rel="noopener noreferrer" aria-label="Download Teara on the App Store" aria-describedby="app-store-tooltip">
+                <img src="assets/app-store-badge.svg" width="180" height="60" alt="Download on the App Store" />
+                <span class="hero-downloads__tooltip" id="app-store-tooltip" role="tooltip">Download on the App Store</span>
+              </a>
+              <a id="testflight" class="hero-downloads__testflight testflight-badge" href="https://testflight.apple.com/join/YMMtMJGQ" target="_blank" rel="noopener noreferrer" aria-label="Join the Teara beta on TestFlight" aria-describedby="testflight-tooltip">
+                <img class="testflight-badge__icon" src="assets/hero-testflight-icon.png" width="36" height="36" alt="" />
+                <span class="testflight-badge__copy"><span>Join the beta on</span><strong>TestFlight</strong></span>
+                <span class="hero-downloads__tooltip" id="testflight-tooltip" role="tooltip">Try the beta on TestFlight</span>
+              </a>
+            </div>
 
             <article id="meaning" class="meaning" aria-label="Name meaning and pronunciation">
               <div class="pronunciation-row">
@@ -140,43 +137,65 @@
               <p class="feature-story__description">Forward a confirmation email to Teara. The app extracts the booking details on your device and lets you review them before adding them to your trip.</p>
             </div>
             <div class="feature-story__media is-loading" tabindex="0" aria-label="Play the forwarded booking animation" aria-busy="true">
-              <video muted playsinline preload="auto" aria-hidden="true">
-                <source src="assets/feature-parsing.mp4?v=borderless-1" type="video/mp4" />
-              </video>
+              <div class="feature-story__video-frame">
+                <video muted playsinline preload="auto" aria-hidden="true">
+                  <source src="assets/feature-parsing.mp4?v=60fps-20261009" type="video/mp4" />
+                </video>
+              </div>
             </div>
           </article>
 
           <article class="feature-story feature-story--reverse">
             <div class="feature-story__copy">
-              <p class="feature-story__label"><span class="feature-story__number">02</span> Create a trip</p>
-              <h3>Start with your dates and destinations.</h3>
-              <p class="feature-story__description">Add the places you are visiting and your travel dates. Teara creates an itinerary where you can keep bookings and plans together.</p>
-            </div>
-            <div class="feature-story__media is-loading" tabindex="0" aria-label="Play the create trip animation" aria-busy="true">
-              <video muted playsinline preload="auto" aria-hidden="true">
-                <source src="assets/feature-create-trip.mp4?v=borderless-1" type="video/mp4" />
-              </video>
-            </div>
-          </article>
-
-          <article class="feature-story">
-            <div class="feature-story__copy">
-              <p class="feature-story__label"><span class="feature-story__number">03</span> Add a block</p>
+              <p class="feature-story__label"><span class="feature-story__number">02</span> Add a block</p>
               <h3>Add plans as your trip takes shape.</h3>
-              <p class="feature-story__description">Keep accommodation, vehicle rentals, transport, dining, activities, and notes on the right day in your itinerary.</p>
+              <p class="feature-story__description">Keep accommodation, vehicle rentals, transport, dining, activities, adventures, and notes on the right day in your itinerary.</p>
               <ul class="block-type-pills" aria-label="Supported block types">
                 <li class="block-type-pill block-type-pill--lodging" tabindex="0" data-tooltip="Such as hotels, hostels, and vacation rentals" aria-label="Lodging, such as hotels, hostels, and vacation rentals.">Lodging</li>
                 <li class="block-type-pill block-type-pill--rental" tabindex="0" data-tooltip="Such as cars, campervans, and bicycles" aria-label="Rental, such as cars, campervans, and bicycles.">Rental</li>
                 <li class="block-type-pill block-type-pill--transport" tabindex="0" data-tooltip="Such as flights, trains, and ferries" aria-label="Transport, such as flights, trains, and ferries.">Transport</li>
                 <li class="block-type-pill block-type-pill--dining" tabindex="0" data-tooltip="Such as restaurants, cafés, and bars" aria-label="Dining, such as restaurants, cafés, and bars.">Dining</li>
                 <li class="block-type-pill block-type-pill--activity" tabindex="0" data-tooltip="Such as tours, museums, and ticketed attractions" aria-label="Activity, such as tours, museums, and ticketed attractions.">Activity</li>
+                <li class="block-type-pill block-type-pill--adventure" tabindex="0" data-tooltip="Such as hikes and outdoor adventures" aria-label="Adventure, such as hikes and outdoor adventures.">Adventure</li>
                 <li class="block-type-pill block-type-pill--note" tabindex="0" data-tooltip="Such as addresses, reminders, and useful details" aria-label="Notes, such as addresses, reminders, and useful details.">Notes</li>
               </ul>
             </div>
             <div class="feature-story__media is-loading" tabindex="0" aria-label="Play the add block animation" aria-busy="true">
-              <video muted playsinline preload="auto" aria-hidden="true">
-                <source src="assets/feature-add-block.mp4?v=borderless-1" type="video/mp4" />
-              </video>
+              <div class="feature-story__video-frame">
+                <video muted playsinline preload="auto" aria-hidden="true">
+                  <source src="assets/feature-add-block.mp4?v=60fps-20261009" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-story">
+            <div class="feature-story__copy">
+              <p class="feature-story__label"><span class="feature-story__number">03</span> Shared trips</p>
+              <h3>Invite your people along.</h3>
+              <p class="feature-story__description">Invite the people traveling with you to share your trip. Keep your bookings and plans together in one shared itinerary, so everyone knows what’s next.</p>
+            </div>
+            <div class="feature-story__media is-loading" tabindex="0" aria-label="Play the invite animation" aria-busy="true">
+              <div class="feature-story__video-frame">
+                <video muted playsinline preload="auto" aria-hidden="true">
+                  <source src="assets/feature-invite.mp4?v=60fps-20261009-2" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-story feature-story--reverse">
+            <div class="feature-story__copy">
+              <p class="feature-story__label"><span class="feature-story__number">04</span> Add a trip</p>
+              <h3>Start with your dates and destinations.</h3>
+              <p class="feature-story__description">Add the places you are visiting and your travel dates. Teara creates an itinerary where you can keep bookings and plans together.</p>
+            </div>
+            <div class="feature-story__media is-loading" tabindex="0" aria-label="Play the create trip animation" aria-busy="true">
+              <div class="feature-story__video-frame">
+                <video muted playsinline preload="auto" aria-hidden="true">
+                  <source src="assets/feature-create-trip.mp4?v=60fps-20261009" type="video/mp4" />
+                </video>
+              </div>
             </div>
           </article>
         </div>
@@ -188,66 +207,32 @@
           <h2 id="roadmap-title">What’s ready, and what’s next.</h2>
         </header>
 
-        <ul class="roadmap__list">
-          <li class="roadmap__item roadmap__item--beta" aria-label="Current status: Public TestFlight beta, version 1.0, build 15">
+<div class="roadmap__item roadmap__item--beta" aria-label="Current status: Live on the App Store, version 1.3">
             <span class="roadmap__status-dot" aria-hidden="true"></span>
-            <span class="roadmap__status-text">Public TestFlight beta · V1.0 · Build 15</span>
-          </li>
-          <li class="roadmap__item roadmap__item--complete" aria-label="Available now: Create and organize trips">
-            <span class="roadmap__check" aria-hidden="true">
-              <svg viewBox="0 0 16 16"><path d="m4 8.2 2.5 2.5L12 5.4" /></svg>
-            </span>
-            <span>Create and organize trips</span>
-          </li>
-          <li class="roadmap__item roadmap__item--complete" aria-label="Available now: Import booking emails and PDF documents">
-            <span class="roadmap__check" aria-hidden="true">
-              <svg viewBox="0 0 16 16"><path d="m4 8.2 2.5 2.5L12 5.4" /></svg>
-            </span>
-            <span>Import booking emails and PDF documents</span>
-          </li>
-          <li class="roadmap__item roadmap__item--complete" aria-label="Available now: Add accommodation, rentals, transport, dining, activities, and notes">
-            <span class="roadmap__check" aria-hidden="true">
-              <svg viewBox="0 0 16 16"><path d="m4 8.2 2.5 2.5L12 5.4" /></svg>
-            </span>
-            <span>Add accommodation, rentals, transport, dining, activities, and notes</span>
-          </li>
-          <li class="roadmap__item roadmap__item--complete" aria-label="Available now: Keep trip data in sync with iCloud">
-            <span class="roadmap__check" aria-hidden="true">
-              <svg viewBox="0 0 16 16"><path d="m4 8.2 2.5 2.5L12 5.4" /></svg>
-            </span>
-            <span>Keep trip data in sync with iCloud</span>
-          </li>
-          <li class="roadmap__item roadmap__item--complete" aria-label="Available now: Trip Assembler">
-            <span class="roadmap__check" aria-hidden="true">
-              <svg viewBox="0 0 16 16"><path d="m4 8.2 2.5 2.5L12 5.4" /></svg>
-            </span>
-            <span>Trip Assembler</span>
-          </li>
-          <li class="roadmap__item roadmap__item--in-progress" aria-label="In progress: Pre-flight checklist">
-            <span class="roadmap__check" aria-hidden="true"></span>
-            <span>Pre-flight checklist</span>
-          </li>
-          <li class="roadmap__item" aria-label="Planned: Custom at Teara import email address">
-            <span class="roadmap__check" aria-hidden="true"></span>
-            <span>Custom @teara import email address</span>
-          </li>
-          <li class="roadmap__item" aria-label="Planned: Travel Day mode">
-            <span class="roadmap__check" aria-hidden="true"></span>
-            <span>Travel Day mode</span>
-          </li>
-          <li class="roadmap__item" aria-label="Planned: Time zone awareness">
-            <span class="roadmap__check" aria-hidden="true"></span>
-            <span>Time zone awareness</span>
-          </li>
-          <li class="roadmap__item" aria-label="Planned: Live Activities and widgets">
-            <span class="roadmap__check" aria-hidden="true"></span>
-            <span>Live Activities and widgets</span>
-          </li>
-          <li class="roadmap__item" aria-label="Planned: Costs at a glance">
-            <span class="roadmap__check" aria-hidden="true"></span>
-            <span>Costs at a glance</span>
-          </li>
-        </ul>
+            <span class="roadmap__status-text">Live on the App Store · V1.3</span>
+          </div>
+        <div class="roadmap-board">
+          <section class="roadmap-column roadmap-column--todo" data-roadmap-column="todo" aria-labelledby="roadmap-todo-title">
+            <h3 id="roadmap-todo-title"><span class="roadmap-column__heading"><span>To do</span><span class="roadmap-count">5</span></span></h3>
+            <ul class="roadmap-cards"><li class="roadmap-card">Custom @teara import email address</li><li class="roadmap-card">Time zone awareness</li><li class="roadmap-card">Live Activities and widgets</li><li class="roadmap-card">Costs at a glance</li><li class="roadmap-card">Trip reminders</li></ul>
+            <button type="button" class="roadmap-more" data-roadmap-open="todo" aria-haspopup="dialog" aria-controls="roadmap-drawer" hidden>Show all</button>
+          </section>
+          <section class="roadmap-column roadmap-column--progress" data-roadmap-column="progress" aria-labelledby="roadmap-progress-title">
+            <h3 id="roadmap-progress-title"><span class="roadmap-column__heading"><span>In progress</span><span class="roadmap-count">3</span></span></h3>
+            <ul class="roadmap-cards"><li class="roadmap-card roadmap__item--in-progress"><span class="roadmap__check" aria-hidden="true"></span>iPhone Duo optimization</li><li class="roadmap-card roadmap__item--in-progress"><span class="roadmap__check" aria-hidden="true"></span>Apple Watch companion</li><li class="roadmap-card roadmap__item--in-progress"><span class="roadmap__check" aria-hidden="true"></span>Travel Day mode</li></ul>
+            <button type="button" class="roadmap-more" data-roadmap-open="progress" aria-haspopup="dialog" aria-controls="roadmap-drawer" hidden>Show all</button>
+          </section>
+          <section class="roadmap-column roadmap-column--done" data-roadmap-column="done" aria-labelledby="roadmap-done-title">
+            <h3 id="roadmap-done-title"><span class="roadmap-column__heading"><span>Done</span><span class="roadmap-count">7</span></span></h3>
+            <ul class="roadmap-cards"><li class="roadmap-card">Shared trips</li><li class="roadmap-card">Create and organize trips</li><li class="roadmap-card">Import booking emails and PDF documents</li><li class="roadmap-card">Add accommodation, rentals, transport, dining, activities, and notes</li><li class="roadmap-card">Keep trip data in sync with iCloud</li><li class="roadmap-card">Trip Assembler</li><li class="roadmap-card">Pre-flight checklist</li></ul>
+            <button type="button" class="roadmap-more" data-roadmap-open="done" aria-haspopup="dialog" aria-controls="roadmap-drawer" >Show all</button>
+          </section>
+        </div>
+        <dialog id="roadmap-drawer" class="roadmap-drawer" aria-labelledby="roadmap-drawer-title" aria-describedby="roadmap-drawer-description">
+          <header class="roadmap-drawer__header"><div><p class="features__eyebrow">Teara roadmap</p><h2 id="roadmap-drawer-title">Done</h2></div><button type="button" class="roadmap-drawer__close" aria-label="Close roadmap drawer" autofocus>×</button></header>
+          <p id="roadmap-drawer-description"></p>
+          <ul class="roadmap-cards roadmap-drawer__cards"></ul>
+        </dialog>
       </section>
 
       <section id="faq" class="faq section-reveal" aria-labelledby="faq-title">
@@ -271,7 +256,7 @@
           </details>
           <details>
             <summary>What can I add to Teara?</summary>
-            <p>You can add accommodation, vehicle rentals, flights and other transport, dining reservations, activities, and notes. Teara currently supports booking confirmation emails and PDF documents.</p>
+            <p>You can add accommodation, vehicle rentals, flights and other transport, dining reservations, activities, adventures, and notes. Teara currently supports booking confirmation emails and PDF documents.</p>
           </details>
           <details>
             <summary>Is my trip information private?</summary>
@@ -279,19 +264,19 @@
           </details>
           <details>
             <summary>Does booking import work on every supported device?</summary>
-            <p>Teara processes booking details directly on your device. The range of confirmations it can understand may vary by device, and support will continue to expand throughout the beta.</p>
+            <p>Teara processes booking details directly on your device. The range of confirmations it can understand may vary by device, and support will continue to expand with future updates.</p>
           </details>
           <details>
             <summary>Is Teara still evolving?</summary>
-            <p>Yes. Teara is actively growing during beta, with support for more trip building blocks, smoother ways to bring plans into your timeline, and new tools that make organizing a trip increasingly effortless.</p>
+            <p>Yes. Teara is live on the App Store and continues to grow. The TestFlight program remains open so you can test future features and share feedback before they reach the App Store.</p>
           </details>
           <details>
-            <summary>How much will Teara cost?</summary>
-            <p>Teara will be completely free to use.</p>
+            <summary>How much does Teara cost?</summary>
+            <p>Teara is completely free to use.</p>
           </details>
           <details>
-            <summary>When can I try Teara?</summary>
-            <p>Teara is available to test now. <a href="https://testflight.apple.com/join/YMMtMJGQ" target="_blank" rel="noopener noreferrer">Join the beta through TestFlight</a>.</p>
+            <summary>Where can I download Teara?</summary>
+            <p>Teara is live on the App Store. <a href="https://apps.apple.com/app/id6800005317" target="_blank" rel="noopener noreferrer">Download the app</a> for the current release. To test future features before they are released, <a href="https://testflight.apple.com/join/YMMtMJGQ" target="_blank" rel="noopener noreferrer">join the ongoing TestFlight program</a>.</p>
           </details>
         </div>
       </section>
@@ -313,11 +298,14 @@
             </a>
           </span>
           <span>© 2026 Teara</span>
-          <a class="site-footer__privacy" href="privacy/">Privacy</a>
         </div>
+        <nav class="site-footer__links" aria-label="Support and privacy">
+          <a class="site-footer__privacy" href="support/">Support</a>
+          <a class="site-footer__privacy" href="privacy/">Privacy</a>
+        </nav>
       </div>
     </footer>
 
-    <script src="script.js?v=theme-1"></script>
+    <script src="script.js?v=feature-sequence-3"></script>
   </body>
 </html>

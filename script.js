@@ -5,33 +5,16 @@ const floatingNav = document.querySelector(".floating-nav");
 const heroShowcase = document.querySelector(".hero-showcase");
 const heroWorldDots = Array.from(document.querySelectorAll(".hero-world__dots circle"));
 const heroWorldRoute = document.querySelector(".hero-world__route");
-const themeToggle = document.querySelector(".theme-toggle");
 const themeColor = document.querySelector('meta[name="theme-color"]');
 const colorSchemePreference = window.matchMedia("(prefers-color-scheme: dark)");
 
-function hasSavedTheme() {
-  try { return localStorage.getItem("teara-theme") !== null; } catch { return false; }
+function applyTheme(isDark) {
+  document.documentElement.dataset.theme = isDark ? "dark" : "light";
+  themeColor?.setAttribute("content", isDark ? "#101116" : "#ffffff");
 }
 
-function applyTheme(theme, persist = true) {
-  document.documentElement.dataset.theme = theme;
-  themeToggle?.setAttribute("aria-label", `Switch to ${theme === "dark" ? "light" : "dark"} mode`);
-  themeToggle?.setAttribute("aria-pressed", String(theme === "dark"));
-  themeColor?.setAttribute("content", theme === "dark" ? "#101116" : "#ffffff");
-  if (persist) {
-    try { localStorage.setItem("teara-theme", theme); } catch {}
-  }
-}
-
-applyTheme(document.documentElement.dataset.theme || "light", false);
-
-themeToggle?.addEventListener("click", () => {
-  applyTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
-});
-
-colorSchemePreference.addEventListener("change", (event) => {
-  if (!hasSavedTheme()) applyTheme(event.matches ? "dark" : "light", false);
-});
+applyTheme(colorSchemePreference.matches);
+colorSchemePreference.addEventListener("change", (event) => applyTheme(event.matches));
 
 if (heroWorldDots.length > 1 && heroWorldRoute && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   let lastDestination = heroWorldDots[0];
@@ -172,20 +155,17 @@ document.querySelectorAll(".section-reveal").forEach((section) => {
 
 const featureVideos = document.querySelectorAll(".feature-story video");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-const featurePlayers = [];
-let featureIntroStarted = false;
 let featureIntroComplete = reduceMotion.matches;
 let activeIntroIndex = 0;
 
 function playNextFeatureIntro() {
-  const player = featurePlayers[activeIntroIndex];
-
-  if (!player) {
+  const video = featureVideos[activeIntroIndex];
+  if (!video || reduceMotion.matches) {
     featureIntroComplete = true;
     return;
   }
-
-  player.play().catch(() => {
+  video.currentTime = 0;
+  video.play().catch(() => {
     activeIntroIndex += 1;
     playNextFeatureIntro();
   });
@@ -229,42 +209,23 @@ featureVideos.forEach((video) => {
   media.addEventListener("click", playFromStart);
   video.addEventListener("ended", () => {
     reset();
-
     if (!featureIntroComplete) {
       activeIntroIndex += 1;
       playNextFeatureIntro();
     }
   });
-
-  featurePlayers.push({
-    video,
-    play: () => {
-      video.currentTime = 0;
-      return video.play();
-    },
-  });
 });
 
-const featuresSection = document.querySelector(".features");
-
-if (featuresSection && !reduceMotion.matches) {
-  const featureIntroObserver = new IntersectionObserver(
-    (entries, observer) => {
-      if (featureIntroStarted || !entries.some((entry) => entry.isIntersecting)) return;
-
-      featureIntroStarted = true;
-      observer.disconnect();
-      playNextFeatureIntro();
-    },
-    {
-      threshold: 0.25,
-      rootMargin: "0px 0px -8%",
-    },
-  );
-
-  featureIntroObserver.observe(featuresSection);
+if (featureVideos.length && !reduceMotion.matches) {
+  const introObserver = new IntersectionObserver((entries, observer) => {
+    if (!entries.some(entry => entry.isIntersecting)) return;
+    observer.disconnect();
+    playNextFeatureIntro();
+  }, { threshold: 0.5 });
+  introObserver.observe(featureVideos[0].closest(".feature-story__media"));
 }
 
+const faqPanels = new Map();
 document.querySelectorAll(".faq details").forEach((details) => {
   const summary = details.querySelector("summary");
   const answer = details.querySelector("p");
@@ -280,10 +241,7 @@ document.querySelectorAll(".faq details").forEach((details) => {
     answerAnimation = undefined;
   };
 
-  summary.addEventListener("click", (event) => {
-    event.preventDefault();
-    const shouldOpen = !details.open || details.classList.contains("is-closing");
-
+  const setOpen = (shouldOpen) => {
     animation?.cancel();
     answerAnimation?.cancel();
 
@@ -339,6 +297,20 @@ document.querySelectorAll(".faq details").forEach((details) => {
       details.style.removeProperty("height");
       details.classList.remove("is-animating");
     };
+  };
+
+  faqPanels.set(details, setOpen);
+  summary.addEventListener("click", (event) => {
+    event.preventDefault();
+    const shouldOpen = !details.open || details.classList.contains("is-closing");
+    if (shouldOpen) {
+      faqPanels.forEach((toggle, panel) => {
+        if (panel !== details && panel.open && !panel.classList.contains("is-closing")) {
+          toggle(false);
+        }
+      });
+    }
+    setOpen(shouldOpen);
   });
 });
 
@@ -373,3 +345,78 @@ audio.addEventListener("ended", () => {
 });
 
 audio.addEventListener("pause", () => setPlaying(false));
+
+// Keep all features in the HTML; progressively limit board previews to five.
+(() => {
+  const drawer = document.querySelector('#roadmap-drawer');
+  if (!drawer || typeof drawer.showModal !== 'function') return;
+  const columns = new Map();
+  const descriptions = {
+    todo: 'Ideas and improvements planned for Teara.',
+    progress: 'Features currently being worked on.',
+    done: 'Features already built into Teara.',
+  };
+  let opener;
+  document.querySelectorAll('[data-roadmap-column]').forEach(column => {
+    const cards = [...column.querySelectorAll('.roadmap-card')];
+    columns.set(column.dataset.roadmapColumn, { column, cards });
+    cards.slice(5).forEach(card => { card.hidden = true; });
+    column.querySelector('.roadmap-more').hidden = cards.length <= 5 && column.dataset.roadmapColumn !== 'done';
+  });
+  document.querySelectorAll('[data-roadmap-open]').forEach(button => {
+    button.addEventListener('click', () => {
+      const key = button.dataset.roadmapOpen;
+      const { column, cards } = columns.get(key);
+      opener = button;
+      drawer.querySelector('#roadmap-drawer-title').textContent = column.querySelector('.roadmap-column__heading span').textContent;
+      drawer.querySelector('#roadmap-drawer-description').textContent = `${descriptions[key]} ${cards.length} features.`;
+      drawer.querySelector('.roadmap-drawer__cards').replaceChildren(...cards.map(card => {
+        const copy = card.cloneNode(true);
+        copy.hidden = false;
+        return copy;
+      }));
+      drawer.showModal();
+      drawer.scrollTop = 0;
+      document.documentElement.classList.add('roadmap-drawer-open');
+    });
+  });
+  let closing = false;
+  async function closeDrawer() {
+    if (!drawer.open || closing) return;
+    closing = true;
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      drawer.classList.add('is-closing');
+      const exit = drawer.animate(
+        [{ transform: 'translateX(0)' }, { transform: 'translateX(100%)' }],
+        { duration: 220, easing: 'ease-in', fill: 'forwards' },
+      );
+      // Cancellation also completes dismissal, so the dialog cannot get stuck.
+      await exit.finished.catch(() => {});
+      drawer.close();
+      exit.cancel();
+    } else {
+      drawer.close();
+    }
+    drawer.classList.remove('is-closing');
+    closing = false;
+  }
+  drawer.querySelector('.roadmap-drawer__close').addEventListener('click', closeDrawer);
+  drawer.addEventListener('cancel', event => {
+    event.preventDefault();
+    closeDrawer();
+  });
+  let backdropPress = false;
+  drawer.addEventListener('pointerdown', event => {
+    const bounds = drawer.getBoundingClientRect();
+    backdropPress = event.target === drawer && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom);
+  });
+  drawer.addEventListener('click', event => {
+    const bounds = drawer.getBoundingClientRect();
+    if (backdropPress && event.target === drawer && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) closeDrawer();
+    backdropPress = false;
+  });
+  drawer.addEventListener('close', () => {
+    document.documentElement.classList.remove('roadmap-drawer-open');
+    opener?.focus();
+  });
+})();
