@@ -30,7 +30,7 @@ Then open http://localhost:8080/. Check both mobile and desktop widths and both 
 
 ## Deliberate decisions to preserve
 
-- Apple Watch hero artwork is hidden on purpose, with its layout space kept.
+- Apple Watch mockup sits over the lower right of the iPhone in the hero (`assets/hero-watch.png`, 116px wide). Keep the watch and phone screens consistent.
 - Official App Store SVG badge; original TestFlight badge and app icon.
 - Mobile menu hides only the TestFlight link and shortens the CTA to "Download".
 - Feature videos play in sequence when the first one enters the viewport, and replay on hover, focus or click.
