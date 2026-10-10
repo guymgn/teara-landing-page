@@ -4,6 +4,7 @@ Static marketing site for the Teara iOS app. Plain HTML, CSS and JS. No framewor
 
 ## Ground rules
 
+- **Start every session on `staging` yourself.** Before any work, run `git fetch origin && git switch staging` (create it from `origin/staging` if missing) and pull. Never ask Guy to switch or sync branches; handle git yourself.
 - **Staging first, always.** Every change, however small, goes to the `staging` branch (directly or through a PR into `staging`). Share the staging preview link with Guy and stop there. Nothing reaches `main` or teara.io until Guy explicitly approves that specific deploy. A request like "fix X and publish" still means staging first, then wait for approval.
 - `main` is production. Netlify project `tearalp` builds and publishes teara.io from `main`, so a push or merge to `main` is a deploy. Never push or merge to `main`, run a production deploy, or promote a Netlify deploy without that approval.
 - Staging preview: https://staging--tearalp.netlify.app (Netlify branch deploy of `staging`).
