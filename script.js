@@ -183,10 +183,20 @@ featureVideos.forEach((video) => {
     media.setAttribute("aria-busy", "false");
   };
 
+  // Videos marked data-rest="end" sit on their last frame when idle, so a
+  // story that builds up from an empty screen never rests on that empty frame.
+  const restsAtEnd = video.dataset.rest === "end";
+  const restTime = () => (restsAtEnd && Number.isFinite(video.duration) ? Math.max(0, video.duration - 1 / 60) : 0);
+  const showRestFrame = () => {
+    if (!restsAtEnd) return revealVideo();
+    video.addEventListener("seeked", revealVideo, { once: true });
+    video.currentTime = restTime();
+  };
+
   if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
-    revealVideo();
+    showRestFrame();
   } else {
-    video.addEventListener("loadeddata", revealVideo, { once: true });
+    video.addEventListener("loadeddata", showRestFrame, { once: true });
     video.addEventListener("error", revealVideo, { once: true });
   }
 
@@ -198,7 +208,7 @@ featureVideos.forEach((video) => {
 
   const reset = () => {
     video.pause();
-    video.currentTime = 0;
+    video.currentTime = restTime();
   };
 
   story.addEventListener("pointerenter", playFromStart);
