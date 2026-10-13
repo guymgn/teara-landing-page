@@ -938,7 +938,7 @@ html[data-theme="dark"] {
 [data-theme="dark"] .site-footer__content { color: #e8e8ec; }
 [data-theme="dark"] .site-footer__content p,
 [data-theme="dark"] .site-footer__meta { color: #858690; }
-[data-theme="dark"] .site-footer__credit a { color: #9a9ba5; }
+[data-theme="dark"] .site-footer__credit a:hover { color: #e8e8ec; }
 
 @media (max-width: 640px) {
     .floating-nav { max-width: calc(100vw - 68px); }
@@ -1761,36 +1761,23 @@ html[data-theme="dark"] {
   text-align: right;
 }
 
-.site-footer__credit {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-}
-
 .site-footer__credit a {
-  display: inline-grid;
-  width: 22px;
-  height: 22px;
-  place-items: center;
-  border-radius: 6px;
-  color: #777981;
-  transition: color 160ms ease, background-color 160ms ease;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgb(119 121 129 / 40%);
+  text-underline-offset: 3px;
+  transition: color 160ms ease, text-decoration-color 160ms ease;
 }
 
 .site-footer__credit a:hover {
-  color: #0a66c2;
-  background: rgb(10 102 194 / 8%);
+  color: #3c3d44;
+  text-decoration-color: currentColor;
 }
 
 .site-footer__credit a:focus-visible {
-  outline: 2px solid rgb(10 102 194 / 28%);
-  outline-offset: 2px;
-}
-
-.site-footer__credit svg {
-  width: 17px;
-  height: 17px;
-  fill: currentColor;
+  outline: 2px solid #7776ff;
+  outline-offset: 3px;
+  border-radius: 3px;
 }
 
 /* Quiet baseline until the custom stamp artwork is ready. */
