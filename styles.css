@@ -2403,3 +2403,9 @@ span.roadmap-column__heading { cursor:default; }
 
 .roadmap-drawer.is-closing::backdrop { animation: roadmap-backdrop-out 220ms ease-in forwards; }
 @keyframes roadmap-backdrop-out { to { opacity: 0; } }
+
+.faq__more { margin: 24px 0 0; color: #777981; font-size: var(--type-sm); }
+.faq__more a { color: inherit; text-decoration: underline; text-decoration-color: rgb(119 121 129 / 40%); text-underline-offset: 3px; }
+.faq__more a:hover { color: #3c3d44; text-decoration-color: currentColor; }
+[data-theme="dark"] .faq__more { color: #858690; }
+[data-theme="dark"] .faq__more a:hover { color: #e8e8ec; }
