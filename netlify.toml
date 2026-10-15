@@ -34,3 +34,9 @@
   to = "/404"
   status = 404
   force = true
+
+[[redirects]]
+  from = "/docs/*"
+  to = "/404"
+  status = 404
+  force = true
