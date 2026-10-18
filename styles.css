@@ -37,6 +37,23 @@ body {
 
 
 
+/* Text links end with Lucide's move-up-right icon, drawn in the link color. */
+.text-link {
+  white-space: nowrap;
+}
+
+.text-link::after {
+  content: "";
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  margin-left: 0.15em;
+  vertical-align: -0.02em;
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M13 5H19V11'/%3E%3Cpath d='M19 5L5 19'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M13 5H19V11'/%3E%3Cpath d='M19 5L5 19'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
 /* Feature switches: see the comment at the top of index.html. */
 html:not([data-feature-gmail="on"]) [data-feature="gmail"] {
   display: none !important;
