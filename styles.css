@@ -1301,17 +1301,8 @@ html[data-theme="dark"] {
 }
 
 .feature-story__hint-tag {
-  display: inline-block;
-  margin-right: 4px;
-  padding: 1px 8px;
-  border: 1px solid #dcdcf9;
-  border-radius: 999px;
-  color: #6765e9;
-  background: rgb(103 101 233 / 7%);
-  font-size: var(--type-xs);
+  color: #66676e;
   font-weight: 600;
-  line-height: 1.6;
-  vertical-align: 1px;
 }
 
 .feature-story__hint a {
@@ -1325,7 +1316,7 @@ html[data-theme="dark"] {
 }
 
 [data-theme="dark"] .feature-story__hint { color: #858690; }
-[data-theme="dark"] .feature-story__hint-tag { border-color: #3a3a5c; color: #a5a4ff; background: rgb(146 145 255 / 10%); }
+[data-theme="dark"] .feature-story__hint-tag { color: #a3a4ad; }
 [data-theme="dark"] .feature-story__hint a:hover { color: #a5a4ff; }
 
 .block-type-pills {
