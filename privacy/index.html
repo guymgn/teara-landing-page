@@ -24,7 +24,7 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <link rel="stylesheet" href="../styles.css?v=privacy-1" />
+    <link rel="stylesheet" href="../styles.css?v=20261018-gmail" />
   </head>
   <body class="legal-body">
 
@@ -37,7 +37,7 @@
         <p class="features__eyebrow">Privacy</p>
         <h1>Clear about your data.</h1>
         <p class="legal-page__intro">Teara keeps only the information needed to build your trip and provide the services you choose to use. This page explains what is handled, why it is needed, and where it goes.</p>
-        <p class="legal-page__date">Effective September 1, 2026</p>
+        <p class="legal-page__date">Last updated October 18, 2026</p>
       </header>
 
       <article class="legal-page__content">
@@ -51,15 +51,32 @@
           <p>Teara stores the identifier supplied by Sign in with Apple, the name you choose to share, your personal forwarding address, authentication tokens, and an Apple Push Notification service device token when notifications are enabled. Booking alerts contain no booking details.</p>
 
           <h3>Your trips</h3>
-          <p>Your trips and trip building blocks are stored on your device and sync through the private iCloud account signed into that device. Teara does not use trip data for advertising and does not sell it.</p>
+          <p>Your trips and trip building blocks are stored on your device and sync through the private iCloud account signed into that device. If you share a trip, its details are stored on Teara's server so the people you invite can see them. Teara does not use trip data for advertising and does not sell it.</p>
 
           <h3>Retention</h3>
           <p>Forwarded messages are marked as received after your device retrieves them. Retrieved messages are deleted from the relay after 7 days. Messages that have not been retrieved are deleted after 30 days. You can delete your forwarding account in the app. Your trips remain on your device and in your private iCloud account unless you delete them there.</p>
         </section>
 
+        <section id="gmail-import">
+          <h2>Gmail import (optional)</h2>
+          <p>If you connect your Gmail account, Teara asks Google for read-only access to your email (the <code>gmail.readonly</code> permission). Teara can't send, delete or change your email.</p>
+          <h3>What Teara reads</h3>
+          <p>Teara searches your mailbox only for travel confirmations, such as flights, hotels, car rentals, tours and booking sites, from the period you choose (1 to 12 months back), and after that only new mail. Matching emails and their attachments are downloaded to your iPhone.</p>
+          <h3>Where it's processed</h3>
+          <p>Emails are read on your iPhone, by Teara's built-in rules and Apple's on-device model (Apple Intelligence). Email content is never sent to Teara's servers or to any other AI service. Your Google sign-in token is kept in your iPhone's Keychain.</p>
+          <h3>What's kept</h3>
+          <p>Emails that aren't travel bookings are skipped, and Teara keeps only their message IDs so it doesn't download them again. Booking details you add to a trip, such as flight numbers, times, places and booking references, become part of that trip. Trips are stored on your iPhone and synced through your own iCloud account. If you share a trip, its details are stored on Teara's server so the people you invite can see them. The original email is never uploaded.</p>
+          <h3>Disconnecting</h3>
+          <p>You can disconnect Gmail at any time in Teara under Account → Gmail. This revokes Teara's access with Google and deletes the downloaded emails from your iPhone. Bookings you already added to trips stay until you delete them. You can also remove Teara's access from your Google Account at <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">https://myaccount.google.com/permissions</a>.</p>
+          <h3>What Teara never does</h3>
+          <p>Teara doesn't use your email for advertising, doesn't sell or share it with third parties, doesn't use it to train AI models, and no person at Teara reads it.</p>
+          <h3>Google API Services User Data Policy</h3>
+          <p>Teara's use and transfer to any other app of information received from Google APIs will adhere to <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+        </section>
+
         <section>
           <h2>Service providers</h2>
-          <p>Teara relies on Apple for Sign in with Apple, iCloud, and push notifications, and on Cloudflare for the booking relay and limited operational storage.</p>
+          <p>Teara relies on Apple for Sign in with Apple, iCloud, and push notifications, on Cloudflare for the booking relay and limited operational storage, and, if you connect Gmail, on Google for sign-in and read-only access to your mailbox.</p>
           <p>Each provider handles information under its own terms and privacy policy. Teara shares only the information needed to provide the requested function.</p>
         </section>
 
@@ -85,6 +102,7 @@
             <li>You review imported booking details before adding them to a trip.</li>
             <li>You can disable notifications in system settings.</li>
             <li>You can disconnect and delete your Teara forwarding account in the app.</li>
+            <li>You can disconnect Gmail in the app under Account → Gmail, or from your Google Account.</li>
             <li>You can revoke a connected LinkedIn authorization through LinkedIn.</li>
           </ul>
         </section>
@@ -92,13 +110,15 @@
         <section>
           <h2>Changes and questions</h2>
           <p>This notice may change as Teara grows. The effective date above will be updated when the policy changes materially.</p>
-          <p>For privacy questions, message the official <a href="https://www.linkedin.com/company/tearaio/" target="_blank" rel="noopener noreferrer">Teara company page on LinkedIn</a>.</p>
+          <p>For privacy questions, email <a href="mailto:hi@guymagen.com">hi@guymagen.com</a> or message the official <a href="https://www.linkedin.com/company/tearaio/" target="_blank" rel="noopener noreferrer">Teara company page on LinkedIn</a>.</p>
         </section>
       </article>
     </main>
 
     <footer class="legal-footer">
       <a href="../">Return to Teara</a>
+      <a href="../support/">Support</a>
+      <a href="../terms/">Terms</a>
       <span>© 2026 Teara</span>
     </footer>
 

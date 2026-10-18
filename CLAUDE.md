@@ -10,7 +10,7 @@ Static marketing site for the Teara iOS app. Plain HTML, CSS and JS. No framewor
 - Staging preview: keep one open PR from `staging` into `main` (currently #6). Netlify builds every push to it at https://deploy-preview-<PR number>--tearalp.netlify.app. Open a new PR if none is open. Opening or updating the PR never publishes; only merging does. Branch deploys (staging--tearalp.netlify.app) are not enabled.
 - Before promoting, confirm `staging` contains everything on `main` and nothing unapproved. Promote by fast-forwarding `main` to the approved `staging` commit.
 - Never commit credentials, `.env*` files, or `.netlify/`.
-- Copy: direct and specific, no hype, no em dashes or en dashes. Check claims against what the app actually does. Do not mention Gmail sync or TripIt as features.
+- Copy: direct and specific, no hype, no em dashes or en dashes. Check claims against what the app actually does. Do not mention TripIt. Gmail import is in development (Google verification pending): describe it only as optional, read-only and processed on the iPhone, matching `privacy/#gmail-import`. Never call it released, a sync, or "verified by Google" until that is true.
 - Use the device light/dark theme. There is no manual theme toggle, and none should be added back.
 
 ## Structure

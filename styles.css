@@ -1293,6 +1293,26 @@ html[data-theme="dark"] {
   line-height: 1.5;
 }
 
+.feature-story__aside {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #e3e4e7;
+}
+
+.feature-story__aside strong {
+  color: #202020;
+  font-weight: 600;
+}
+
+.feature-story__aside a {
+  color: #6765e9;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .feature-story__aside { border-color: #2b2c33; }
+[data-theme="dark"] .feature-story__aside strong { color: #f1f1f4; }
+[data-theme="dark"] .feature-story__aside a { color: #a5a4ff; }
+
 .block-type-pills {
   display: flex;
   flex-wrap: wrap;
