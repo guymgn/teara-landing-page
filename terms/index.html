@@ -24,73 +24,91 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <link rel="stylesheet" href="../styles.css?v=20261018-gmail" />
+    <link rel="stylesheet" href="../styles.css?v=20261018-help" />
+    <link rel="stylesheet" href="../help.css?v=20261018-help" />
   </head>
-  <body class="legal-body">
+  <body class="help">
+    <header class="help-topbar">
+      <a class="help-brand" href="../" aria-label="Teara home">
+        <img src="../assets/teara-app-icon.png" alt="" />
+        <span>Teara</span>
+        <span class="help-brand__divider" aria-hidden="true"></span>
+        <span class="help-brand__section">Help center</span>
+      </a>
+      <a class="help-topbar__cta" href="https://apps.apple.com/il/app/teara/id6800005317" target="_blank" rel="noopener noreferrer">Download the app</a>
+    </header>
 
-    <main class="legal-page">
-      <header class="legal-page__header">
-        <a class="legal-page__brand" href="../" aria-label="Return to Teara">
-          <img src="../assets/teara-app-icon.png" alt="" />
-          <span>Teara</span>
-        </a>
-        <p class="features__eyebrow">Terms</p>
-        <h1>Terms of service.</h1>
-        <p class="legal-page__intro">These terms apply when you use the Teara app and teara.io. By using Teara, you agree to them.</p>
-        <p class="legal-page__date">Last updated October 18, 2026</p>
-      </header>
+    <div class="help-shell">
+      <aside class="help-sidebar" aria-label="Help center pages">
+        <nav class="help-nav">
+          <a class="help-nav__back" href="../">← Back to teara.io</a>
+          <div class="help-nav__group"><p class="help-nav__title">Help</p><ul><li><a href="../support/">Support</a></li></ul></div><div class="help-nav__group"><p class="help-nav__title">Policies</p><ul><li><a href="../privacy/">Privacy policy</a></li><li><a href="../terms/" aria-current="page">Terms of service</a></li></ul></div>
+        </nav>
+      </aside>
 
-      <article class="legal-page__content">
-        <section>
-          <h2>The service</h2>
+      <nav class="help-tabs" aria-label="Help center pages"><a href="../support/">Support</a><a href="../privacy/">Privacy policy</a><a href="../terms/" aria-current="page">Terms of service</a></nav>
+
+      <main class="help-main">
+        <header>
+          <p class="help-eyebrow">Policies</p>
+          <h1>Terms of service</h1>
+          <p class="help-lede">These terms apply when you use the Teara app and teara.io. By using Teara, you agree to them.</p>
+          <p class="help-meta">Last updated October 18, 2026</p>
+          <details class="help-toc-inline">
+            <summary>On this page</summary>
+            <ul data-help-toc></ul>
+          </details>
+        </header>
+
+        <article class="help-content">
+          <h2 id="the-service">The service</h2>
           <p>Teara is a personal trip-planning app for iPhone. It is provided as is and is still evolving. Some features are offered as a beta, including through TestFlight, and features may change or be removed.</p>
-        </section>
+        
 
-        <section>
-          <h2>Check your travel details</h2>
-          <p>Teara extracts booking details automatically and can make mistakes. Before you travel, check flight times, addresses, dates and booking references against the original confirmation from the airline, hotel or booking site. That confirmation is the source of truth.</p>
-        </section>
+          <h2 id="check-your-travel-details">Check your travel details</h2>
+          <div class="help-callout" role="note"><svg class="help-callout__icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8.25" stroke="currentColor" stroke-width="1.5"/><path d="M10 9v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="10" cy="6.3" r="1" fill="currentColor"/></svg><p>Teara extracts booking details automatically and can make mistakes. Before you travel, check flight times, addresses, dates and booking references against the original confirmation from the airline, hotel or booking site. That confirmation is the source of truth.</p></div>
+        
 
-        <section>
-          <h2>Acceptable use</h2>
+          <h2 id="acceptable-use">Acceptable use</h2>
           <p>Don't misuse your Teara forwarding address or shared trips. That includes sending spam, sharing unlawful content, and adding or forwarding other people's information without their permission.</p>
-        </section>
+        
 
-        <section>
-          <h2>Connected accounts</h2>
+          <h2 id="connected-accounts">Connected accounts</h2>
           <p>Teara uses connected accounts, such as Gmail and iCloud, only as described in the <a href="../privacy/">privacy policy</a>. You can disconnect them at any time.</p>
-        </section>
+        
 
-        <section>
-          <h2>Shared trips</h2>
+          <h2 id="shared-trips">Shared trips</h2>
           <p>When you share a trip, the people you invite can see its details. Share a trip only with people you want to see those details.</p>
-        </section>
+        
 
-        <section>
-          <h2>Limitation of liability</h2>
+          <h2 id="limitation-of-liability">Limitation of liability</h2>
           <p>To the extent the law allows, Teara is not liable for indirect or consequential losses, such as missed flights, bookings or connections, that result from using the app or relying on the information it shows.</p>
-        </section>
+        
 
-        <section>
-          <h2>Suspension</h2>
+          <h2 id="suspension">Suspension</h2>
           <p>Teara may suspend or close accounts that abuse the service, including the forwarding address or shared trips.</p>
-        </section>
+        
 
-        <section>
-          <h2>Changes and questions</h2>
+          <h2 id="changes-and-questions">Changes and questions</h2>
           <p>These terms may be updated as Teara grows. The date above changes when they do.</p>
           <p>For questions, email <a href="mailto:support@teara.io">support@teara.io</a>.</p>
-        </section>
-      </article>
-    </main>
+        
+        </article>
 
-    <footer class="legal-footer">
-      <a href="../">Return to Teara</a>
-      <a href="../support/">Support</a>
-      <a href="../privacy/">Privacy</a>
-      <span>© 2026 Teara</span>
-    </footer>
+        <nav class="help-pager" aria-label="Previous and next page"><a class="help-pager__prev" href="../privacy/"><small>Previous</small>Privacy policy</a></nav>
 
-    <script src="../script.js?v=theme-1"></script>
+        <footer class="help-footer">
+          <span>Questions? Email <a href="mailto:support@teara.io">support@teara.io</a></span>
+          <span>© 2026 Teara</span>
+        </footer>
+      </main>
+
+      <aside class="help-toc" aria-label="On this page">
+        <p class="help-toc__title">On this page</p>
+        <ul data-help-toc></ul>
+      </aside>
+    </div>
+
+    <script src="../help.js?v=20261018-help"></script>
   </body>
 </html>

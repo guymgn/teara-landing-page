@@ -16,7 +16,7 @@ Static marketing site for the Teara iOS app. Plain HTML, CSS and JS. No framewor
 ## Structure
 
 - `index.html`, `styles.css`, `script.js`: the home page (nav, hero, Features, Roadmap, FAQ, footer).
-- `privacy/`, `support/`: secondary pages. They load `script.js` too.
+- `support/`, `privacy/`, `terms/`: the help center. Docs-style layout (page list left, content, "On this page" right) from `help.css` and `help.js`. They don't load `script.js`. Give every section an `h2` with an `id`; `help.js` builds the table of contents and heading links from those. Keep the page list in the sidebar, mobile tabs and previous/next links in sync when adding a page. The old `.legal-*` rules in `styles.css` are no longer used.
 - `assets/`: runtime images, SVGs and the four 60 fps feature MP4s. These are source, not build output.
 - `scripts/sync-teara-status.mjs` (`npm run sync:teara`): updates the roadmap status badge from App Store Connect. It depends on the sibling `guy-portfolio` repo and its private `.env.local`, so it only runs on Guy's Mac. Do not run it in a cloud session. Edit the badge text by hand if asked.
 
@@ -39,7 +39,7 @@ Then open http://localhost:8080/. Check both mobile and desktop widths and both 
 
 ## Known open issues (as of Oct 10, 2026)
 
-- `script.js` calls `audioButton.addEventListener` without a null check. Privacy and support have no audio button, so it throws there.
+- `script.js` calls `audioButton.addEventListener` without a null check, so it throws on any page without the audio button. The help pages no longer load it.
 - No `_redirects` / `netlify.toml` here. `/.well-known/apple-app-site-association` and `/join/*` invite links return 404 on teara.io. The old copy in the Teara app repo (`Teara/landing-page`) has proxy rules to `api.teara.io`; review them before porting. Do not copy anything else from that stale copy.
 - Netlify publishes from the repo root. `netlify.toml` returns 404 for repo-only files (`README.md`, `CLAUDE.md`, `package.json`, `scripts/`). Add any new non-public file to that list. Cloud sessions cannot reach Netlify's API, so publishing happens by pushing to `main`, only with Guy's approval.
 - support@teara.io delivery is unverified.

@@ -24,25 +24,44 @@
         document.documentElement.dataset.theme = theme;
       })();
     </script>
-    <link rel="stylesheet" href="../styles.css?v=20261018-gmail" />
+    <link rel="stylesheet" href="../styles.css?v=20261018-help" />
+    <link rel="stylesheet" href="../help.css?v=20261018-help" />
   </head>
-  <body class="legal-body">
+  <body class="help">
+    <header class="help-topbar">
+      <a class="help-brand" href="../" aria-label="Teara home">
+        <img src="../assets/teara-app-icon.png" alt="" />
+        <span>Teara</span>
+        <span class="help-brand__divider" aria-hidden="true"></span>
+        <span class="help-brand__section">Help center</span>
+      </a>
+      <a class="help-topbar__cta" href="https://apps.apple.com/il/app/teara/id6800005317" target="_blank" rel="noopener noreferrer">Download the app</a>
+    </header>
 
-    <main class="legal-page">
-      <header class="legal-page__header">
-        <a class="legal-page__brand" href="../" aria-label="Return to Teara">
-          <img src="../assets/teara-app-icon.png" alt="" />
-          <span>Teara</span>
-        </a>
-        <p class="features__eyebrow">Privacy</p>
-        <h1>Clear about your data.</h1>
-        <p class="legal-page__intro">Teara keeps only the information needed to build your trip and provide the services you choose to use. This page explains what is handled, why it is needed, and where it goes.</p>
-        <p class="legal-page__date">Last updated October 18, 2026</p>
-      </header>
+    <div class="help-shell">
+      <aside class="help-sidebar" aria-label="Help center pages">
+        <nav class="help-nav">
+          <a class="help-nav__back" href="../">← Back to teara.io</a>
+          <div class="help-nav__group"><p class="help-nav__title">Help</p><ul><li><a href="../support/">Support</a></li></ul></div><div class="help-nav__group"><p class="help-nav__title">Policies</p><ul><li><a href="../privacy/" aria-current="page">Privacy policy</a></li><li><a href="../terms/">Terms of service</a></li></ul></div>
+        </nav>
+      </aside>
 
-      <article class="legal-page__content">
-        <section>
-          <h2>The Teara app</h2>
+      <nav class="help-tabs" aria-label="Help center pages"><a href="../support/">Support</a><a href="../privacy/" aria-current="page">Privacy policy</a><a href="../terms/">Terms of service</a></nav>
+
+      <main class="help-main">
+        <header>
+          <p class="help-eyebrow">Policies</p>
+          <h1>Privacy policy</h1>
+          <p class="help-lede">Teara keeps only the information needed to build your trip and provide the services you choose to use. This page explains what is handled, why it is needed, and where it goes.</p>
+          <p class="help-meta">Last updated October 18, 2026</p>
+          <details class="help-toc-inline">
+            <summary>On this page</summary>
+            <ul data-help-toc></ul>
+          </details>
+        </header>
+
+        <article class="help-content">
+          <h2 id="the-teara-app">The Teara app</h2>
           <h3>Information you provide</h3>
           <p>When you connect forwarded bookings, Teara uses Sign in with Apple to create your forwarding account. The relay receives only messages sent to your personal Teara forwarding address. It does not read or scan your inbox.</p>
           <p>The relay may temporarily hold the forwarded message subject, body text, and supported PDF attachments so your device can retrieve them. Teara processes the booking details on your device and lets you review them before adding anything to a trip.</p>
@@ -55,10 +74,9 @@
 
           <h3>Retention</h3>
           <p>Forwarded messages are marked as received after your device retrieves them. Retrieved messages are deleted from the relay after 7 days. Messages that have not been retrieved are deleted after 30 days. You can delete your forwarding account in the app. Your trips remain on your device and in your private iCloud account unless you delete them there.</p>
-        </section>
+        
 
-        <section id="gmail-import">
-          <h2>Gmail import (optional)</h2>
+          <h2 id="gmail-import">Gmail import (optional)</h2>
           <p>If you connect your Gmail account, Teara asks Google for read-only access to your email (the <code>gmail.readonly</code> permission). Teara can't send, delete or change your email.</p>
           <h3>What Teara reads</h3>
           <p>Teara searches your mailbox only for travel confirmations, such as flights, hotels, car rentals, tours and booking sites, from the period you choose (1 to 12 months back), and after that only new mail. Matching emails and their attachments are downloaded to your iPhone.</p>
@@ -72,31 +90,26 @@
           <p>Teara doesn't use your email for advertising, doesn't sell or share it with third parties, doesn't use it to train AI models, and no person at Teara reads it.</p>
           <h3>Google API Services User Data Policy</h3>
           <p>Teara's use and transfer to any other app of information received from Google APIs will adhere to <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
-        </section>
+        
 
-        <section>
-          <h2>Service providers</h2>
+          <h2 id="service-providers">Service providers</h2>
           <p>Teara relies on Apple for Sign in with Apple, iCloud, and push notifications, on Cloudflare for the booking relay and limited operational storage, and, if you connect Gmail, on Google for sign-in and read-only access to your mailbox.</p>
           <p>Each provider handles information under its own terms and privacy policy. Teara shares only the information needed to provide the requested function.</p>
-        </section>
+        
 
-        <section>
-          <h2>LinkedIn authorization</h2>
+          <h2 id="linkedin-authorization">LinkedIn authorization</h2>
           <p>Teara may use LinkedIn's authorized tools to manage its official company page. Access is granted through LinkedIn and limited to the permissions needed for approved page management. It can be revoked through LinkedIn at any time.</p>
-        </section>
+        
 
-        <section>
-          <h2>Tracking and advertising</h2>
+          <h2 id="tracking-and-advertising">Tracking and advertising</h2>
           <p>Teara does not track people across apps or websites. Teara does not sell personal information or use it for targeted advertising.</p>
-        </section>
+        
 
-        <section>
-          <h2>Security</h2>
+          <h2 id="security">Security</h2>
           <p>Teara uses encrypted connections for data in transit and provider security controls for stored data. Access credentials are kept outside public source code. No system can be guaranteed completely secure, but Teara limits collection and access to what each feature needs.</p>
-        </section>
+        
 
-        <section>
-          <h2>Your choices</h2>
+          <h2 id="your-choices">Your choices</h2>
           <ul>
             <li>You choose which confirmations to forward to Teara.</li>
             <li>You review imported booking details before adding them to a trip.</li>
@@ -105,23 +118,28 @@
             <li>You can disconnect Gmail in the app under Account → Gmail, or from your Google Account.</li>
             <li>You can revoke a connected LinkedIn authorization through LinkedIn.</li>
           </ul>
-        </section>
+        
 
-        <section>
-          <h2>Changes and questions</h2>
+          <h2 id="changes-and-questions">Changes and questions</h2>
           <p>This notice may change as Teara grows. The effective date above will be updated when the policy changes materially.</p>
           <p>For privacy questions, email <a href="mailto:support@teara.io">support@teara.io</a> or message the official <a href="https://www.linkedin.com/company/tearaio/" target="_blank" rel="noopener noreferrer">Teara company page on LinkedIn</a>.</p>
-        </section>
-      </article>
-    </main>
+        
+        </article>
 
-    <footer class="legal-footer">
-      <a href="../">Return to Teara</a>
-      <a href="../support/">Support</a>
-      <a href="../terms/">Terms</a>
-      <span>© 2026 Teara</span>
-    </footer>
+        <nav class="help-pager" aria-label="Previous and next page"><a class="help-pager__prev" href="../support/"><small>Previous</small>Support</a><a class="help-pager__next" href="../terms/"><small>Next</small>Terms of service</a></nav>
 
-    <script src="../script.js?v=theme-1"></script>
+        <footer class="help-footer">
+          <span>Questions? Email <a href="mailto:support@teara.io">support@teara.io</a></span>
+          <span>© 2026 Teara</span>
+        </footer>
+      </main>
+
+      <aside class="help-toc" aria-label="On this page">
+        <p class="help-toc__title">On this page</p>
+        <ul data-help-toc></ul>
+      </aside>
+    </div>
+
+    <script src="../help.js?v=20261018-help"></script>
   </body>
 </html>
