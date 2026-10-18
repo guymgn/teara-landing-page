@@ -368,7 +368,10 @@ audio.addEventListener("pause", () => setPlaying(false));
   };
   let opener;
   document.querySelectorAll('[data-roadmap-column]').forEach(column => {
-    const cards = [...column.querySelectorAll('.roadmap-card')];
+    // Cards switched off with a feature flag (see index.html) don't count or show in the drawer.
+    const cards = [...column.querySelectorAll('.roadmap-card')].filter(card => getComputedStyle(card).display !== 'none');
+    const count = column.querySelector('.roadmap-count');
+    if (count) count.textContent = cards.length;
     columns.set(column.dataset.roadmapColumn, { column, cards });
     cards.slice(5).forEach(card => { card.hidden = true; });
     column.querySelector('.roadmap-more').hidden = cards.length <= 5 && column.dataset.roadmapColumn !== 'done';

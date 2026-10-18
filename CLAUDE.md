@@ -17,6 +17,7 @@ Static marketing site for the Teara iOS app. Plain HTML, CSS and JS. No framewor
 
 - `index.html`, `styles.css`, `script.js`: the home page (nav, hero, Features, Roadmap, FAQ, footer).
 - `support/`, `privacy/`, `terms/`: the help center. Docs-style layout (page list left, content, "On this page" right) from `help.css` and `help.js`. They don't load `script.js`. Give every section an `h2` with an `id`; `help.js` builds the table of contents and heading links from those. Keep the page list in the sidebar, mobile tabs and previous/next links in sync when adding a page. The old `.legal-*` rules in `styles.css` are no longer used.
+- Feature switches: `<html data-feature-gmail="off">` at the top of `index.html`. Elements with `data-feature="gmail"` are hidden unless it is `"on"`, and hidden roadmap cards drop out of the column count. Keep Gmail `off` until Google approves Gmail access and the app ships it; the privacy policy and support FAQ describe it regardless.
 - `assets/`: runtime images, SVGs and the four 60 fps feature MP4s. These are source, not build output.
 - `scripts/sync-teara-status.mjs` (`npm run sync:teara`): updates the roadmap status badge from App Store Connect. It depends on the sibling `guy-portfolio` repo and its private `.env.local`, so it only runs on Guy's Mac. Do not run it in a cloud session. Edit the badge text by hand if asked.
 
