@@ -1293,32 +1293,6 @@ html[data-theme="dark"] {
   line-height: 1.5;
 }
 
-.feature-story__hint {
-  margin: 16px 0 0;
-  color: #8a8b92;
-  font-size: var(--type-sm);
-  line-height: 1.5;
-}
-
-.feature-story__hint-tag {
-  color: #66676e;
-  font-weight: 600;
-}
-
-.feature-story__hint a {
-  color: inherit;
-  text-decoration-color: rgb(138 139 146 / 50%);
-  text-underline-offset: 3px;
-}
-
-.feature-story__hint a:hover {
-  color: #6765e9;
-}
-
-[data-theme="dark"] .feature-story__hint { color: #858690; }
-[data-theme="dark"] .feature-story__hint-tag { color: #a3a4ad; }
-[data-theme="dark"] .feature-story__hint a:hover { color: #a5a4ff; }
-
 .block-type-pills {
   display: flex;
   flex-wrap: wrap;
