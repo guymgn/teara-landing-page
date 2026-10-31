@@ -40,3 +40,18 @@
   to = "/404"
   status = 404
   force = true
+
+# Trip invitations live on the Teara Worker (api.teara.io). Proxy, don't
+# redirect: iOS fetches the app-site-association file from teara.io itself
+# and refuses redirects, and invite links must stay on teara.io/join/<code>.
+[[redirects]]
+  from = "/.well-known/apple-app-site-association"
+  to = "https://api.teara.io/.well-known/apple-app-site-association"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/join/*"
+  to = "https://api.teara.io/join/:splat"
+  status = 200
+  force = true
