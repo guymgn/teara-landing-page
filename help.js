@@ -4,13 +4,20 @@
   const headings = [...document.querySelectorAll(".help-content h2[id]")];
   if (!headings.length) return;
 
+  // A heading's own words, without status pills such as "Coming soon".
+  const headingText = (heading) => {
+    const copy = heading.cloneNode(true);
+    copy.querySelectorAll(".help-pill").forEach((pill) => pill.remove());
+    return copy.textContent.trim();
+  };
+
   const lists = [...document.querySelectorAll("[data-help-toc]")];
   for (const list of lists) {
     for (const heading of headings) {
       const item = document.createElement("li");
       const link = document.createElement("a");
       link.href = `#${heading.id}`;
-      link.textContent = heading.textContent.trim();
+      link.textContent = headingText(heading);
       link.dataset.target = heading.id;
       item.append(link);
       list.append(item);
@@ -21,7 +28,7 @@
     const anchor = document.createElement("a");
     anchor.className = "help-anchor";
     anchor.href = `#${heading.id}`;
-    anchor.setAttribute("aria-label", `Link to ${heading.textContent.trim()}`);
+    anchor.setAttribute("aria-label", `Link to ${headingText(heading)}`);
     anchor.textContent = "#";
     heading.prepend(anchor);
   }

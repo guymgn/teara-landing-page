@@ -624,3 +624,21 @@
     display: none;
   }
 }
+
+/* Status pill beside a heading, e.g. "Coming soon". Same small caps as the
+   roadmap status labels on the home page. */
+.help-pill {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--help-accent-soft);
+  color: var(--help-accent-text);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  vertical-align: middle;
+  white-space: nowrap;
+}
