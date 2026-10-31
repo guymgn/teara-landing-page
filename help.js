@@ -1,4 +1,4 @@
-// Help center pages: build "On this page" from the h2 headings, add heading links,
+// Knowledge Center pages: build "On this page" from the h2 headings, add heading links,
 // and highlight the section currently in view.
 (() => {
   const headings = [...document.querySelectorAll(".help-content h2[id]")];
