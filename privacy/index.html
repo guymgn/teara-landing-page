@@ -53,7 +53,7 @@
           <p class="help-eyebrow">Policies</p>
           <h1>Privacy policy</h1>
           <p class="help-lede">Teara keeps only the information needed to build your trip and provide the services you choose to use. This page explains what is handled, why it is needed, and where it goes.</p>
-          <p class="help-meta">Last updated October 18, 2026</p>
+          <p class="help-meta">Last updated October 31, 2026</p>
           <details class="help-toc-inline">
             <summary>On this page</summary>
             <ul data-help-toc></ul>
@@ -92,8 +92,14 @@
           <p>Teara's use and transfer to any other app of information received from Google APIs will adhere to <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
         
 
+          <h2 id="usage-analytics">Usage analytics</h2>
+          <p>To find what isn't working, the app sends usage events to Mixpanel: which screens are opened, which features are used, and how imports turn out, as counts and kinds (for example, "a confirmation was read" or "a flight was added"). Events never include booking content, email text, names, places, email addresses or confirmation numbers.</p>
+          <p>Events are linked to a one-way hash of your Sign in with Apple identifier and to a random identifier for this installation, so Teara can count returning users without knowing who they are. Each event also carries the app version, the iOS version and the device model. Error events carry only an error code. Mixpanel stores this data in the United States.</p>
+          <p>Usage analytics are on by default. You can turn them off at any time in Teara under Account → Share usage analytics, and anything not yet sent is deleted from your iPhone.</p>
+        
+
           <h2 id="service-providers">Service providers</h2>
-          <p>Teara relies on Apple for Sign in with Apple, iCloud, and push notifications, on Cloudflare for the booking relay and limited operational storage, and, if you connect Gmail, on Google for sign-in and read-only access to your mailbox.</p>
+          <p>Teara relies on Apple for Sign in with Apple, iCloud, and push notifications, on Cloudflare for the booking relay and limited operational storage, on Mixpanel for usage analytics, and, if you connect Gmail, on Google for sign-in and read-only access to your mailbox.</p>
           <p>Each provider handles information under its own terms and privacy policy. Teara shares only the information needed to provide the requested function.</p>
         
 
@@ -114,6 +120,7 @@
             <li>You choose which confirmations to forward to Teara.</li>
             <li>You review imported booking details before adding them to a trip.</li>
             <li>You can disable notifications in system settings.</li>
+            <li>You can turn off usage analytics in the app under Account → Share usage analytics.</li>
             <li>You can disconnect and delete your Teara forwarding account in the app.</li>
             <li>You can disconnect Gmail in the app under Account → Gmail, or from your Google Account.</li>
             <li>You can revoke a connected LinkedIn authorization through LinkedIn.</li>
